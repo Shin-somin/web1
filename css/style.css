@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/*ROOT*/
+
+:root {
+    --main-text-color: #262626;
+    --text-color: #F0F0F0;
+    --conC-back: #E7E8E7;
+    --title-color: #D90000; /*#09C6F9*/
+    --highlight-back:#711F1F;
+    --highlight-text: #F2F2F2;
+    --max-width: 1000px;
+    
+}
+
+
+/*FONT*/
+
+body {margin: 0; font-family: 'Ubuntu', 'NanumSquare', sans-serif;}
+@font-face { font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+h2 {font-family: 'Binggrae-Bold', sans-serif;}
+h3 {font-family: 'Binggrae-Bold', sans-serif;}
+
+/*HEADER*/
+
+header {position: fixed; top: 0; left: 0; width: 100%; height: 70px; border-bottom: solid 1px var(--main-text-color); background-color: #fff; } /*nav바랑 안겹치게 마진 설정*/
+
+header .container {box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);}/*PROMLEMMMMMMMMMMMMMMMMMMMMMMMMMM TnT*/
+header .container .small-con .title a {display: inline-block;  width: 100px; height: 70px; margin-left: 0px; padding-top: 0px; text-decoration: none; background-color: var(--highlight-back);}
+header .container .small-con .title a h1 {margin-top: 15px; padding-left: 20px; font-family: 'Righteous', serif; font-size: 30px; font-weight: bold; color: var(--highlight-text);}
+header .container .small-con ul li a {display: block; margin: 17px; padding: 8px 0; text-align: center; cursor: pointer; text-decoration: none; color: var(--main-text-color);}
+header .container .small-con ul li a:hover {
+    background: -webkit-linear-gradient(left, #09C6F9, #045DE9
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    header .container .small-con {
+        max-width: var(--max-width); 
+        margin: auto;
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-content: center; 
+    }
+    header .container .small-con ul {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: center; 
+        align-content: center; 
+        padding: 0;
+        margin: 0px; 
+        list-style: none;
+    }
+    header .container .small-con ul li {
+        display: flex; 
+        justify-content: center; 
+        align-content: center; 
+    }
+} 
+@media (max-width: 767px) {
+    header .container .small-con ul {
+        display: none;
+    }
+}
+
+
+
+/*CONTENT A-A-A-A-A-A-A-A-A (main)*/
+
+.conA {margin-top: 60px; background: linear-gradient(0deg, rgba(0, 0, 0, 0.6),  rgba(0, 0, 0, 0.6)), url('../img/front/4.jpg') center; background-size: cover; text-align: center;}
+.conA .container {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.conA .container h1 {margin-top: 0; margin-bottom: 5px; font-family: 'Righteous', serif; font-size: 15vw; color: var(--title-color);} 
+.conA .container .small-title {margin-top: 0; margin-bottom: 0; padding-bottom: 50px; font-size: 20px; line-height: 1.5;color: var(--text-color);}
+.conA .container a {display: inline-block; padding: 10px 30px; background-color: rgba(0, 0, 0, 0.2); border: solid 1px var(--text-color); border-radius: 20px; text-decoration: none; color: var(--text-color); transition: 0.3s;}
+
+.conA .container a:hover {background-color: rgba(225, 225, 225, 1);}
+.conA .container a:hover {
+    background: -webkit-linear-gradient(left, #83EAF1, #0CBABA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+    .conA .container {height: 70vh;}
+    .conA .container h1 {font-size: 120px;}
+}
+@media (max-width: 767px) {
+    .conA .container {height: 80vh;}
+    .conA .container .small-title {font-size: 18px;}
+}
+
+
+/*CONTENT B-B-B-B-B-B-B-B-B-B-B (INDEX)*/
+
+.conB .container {padding-top: 50px; padding-bottom: 20px; text-align: center;}
+.conB .container .index {padding-top: 0px; padding-bottom: 20px;}
+.conB .container .index a {display:inline-block; transition-duration: 0.3s; text-decoration: none; color: var(--main-text-color);}
+.conB .container .index a:hover {transform: scale(1.2);}
+.conB .container .index a img {width: 10vw; margin-bottom: 15px; }
+.conB .container .index a p {margin-top: 0; margin-bottom: 0px;}
+
+@media (min-width: 768px) {
+    .conB .container {display: flex; flex-direction: row; justify-content: center; align-content: center; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+    .conB .container .index {flex: 1;}
+    .conB .container .index a img {width: 70px;}
+    .conB .container .index a p {font-size: 18px;}
+}
+@media (max-width: 767px) {
+    .conB .container {padding-top: 30px;}
+    .conB .container .index a img {min-width: 50px; margin-bottom: 3px;}
+}
+/*New부분*/
+.effect {position: relative; display: inline-block; overflow: hidden; /* 불필요한 부분 가리기 */ padding: 1px;}
+.effect:after {position: absolute; z-index: 1; width: 80px; height: auto; background: red; content: "New"; /* 보여주는 텍스트 */
+text-align: center; color: #fff; font-family: 'Arial'; font-weight: bold; padding: 3px 10px; left: -30px; top: 1px; transform: rotate(-30deg); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);}
+
+/*CONTENT C-C-C-C-C-C-C-C-C (content)*/
+
+.conC {background-color: var(--conC-back);}
+.photo-list-column {display:flex; flex-direction: row; margin: 0; padding: 15px 0;  align-content: space-around; justify-content: space-around; flex-wrap: wrap; max-width: 1000px; height: auto; margin-left: auto; margin-right: auto; overflow: hidden;}
+
+.photobox {margin: 5px 0; width: 200px; height: 180px; background: #fff; list-style: none;}
+.photobox a {text-decoration: none;}
+
+.photo {width: 200px; height: 120px; background-color: gray; overflow: hidden;}
+.photo img {width: 100%; height: auto;  }
+
+.description {margin: 7px; height: 60px; overflow: hidden;}
+.description .title {margin-top:0 ; margin-bottom: 5px; font-size: 15px; font-weight: bold; color: var(--main-text-color); letter-spacing: 0.2px;}
+.description .detail {margin: 0; font-size: 12px; color: gray;}
+
+
+/*FOOTER*/
+
+footer {width: 100%; height: 250px; background: var(--main-text-color); color: var(--text-color); text-align: center; }
+footer .container {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-content: center;}
+footer .container > h1 {margin-top: 20px; margin-bottom: 20px; font-family: 'Righteous', serif; font-size: 40px;}
+footer .container > p {margin: 0; font-size: 14px; line-height: 1.5; word-spacing: 3px;}
+
+/*---------------------------------------------INDEX PAGE STYLE---------------------------------------------*/
+
+.list-container {margin-top: 70px;} /*nav바랑 안겹치게 마진 설정*/
+.list-container .con {margin-bottom: 150px; display: flex; flex-direction: column; max-width: var(--max-width); margin-left: auto; margin-right: auto;}
+
+.list-container .con h2 {margin-top: 60px; margin-bottom: 60px; font-family: 'Righteous', serif; font-size: 80px; text-align: center; color: var(--highlight-back);}
+.list-container .con a {text-decoration: none;}
+
+.list-container .con a .first-box {margin-bottom: 5px; display: flex; flex-direction: row; border-top: solid 1px var(--main-text-color); border-bottom: solid 1px var(--main-text-color);}
+.list-container .con a .box {margin-bottom: 5px; display: flex; flex-direction: row; border-bottom: solid 1px var(--main-text-color);}
+.list-container .con a .last-box {display: flex; flex-direction: row; border-bottom: solid 1px var(--main-text-color);}
+
+.list-container .con .photo {width: 300px; height: 180px;}
+.list-container .con .photo img {width: 300px; height: auto; background-color: rgba(0, 0, 0, 0.9);}
+
+
+.list-container .con .description {padding: 30px 30px; color: var(--main-text-color);}
+.list-container .con .description h3 {margin: 0; font-size: 20px;}
+.list-container .con .description p {margin-top: 15px; color: gray;}
+
+/*---------------------------------------------CONTENT PAGE STYLE---------------------------------------------*/
+
+
+.Content_con {margin-top: 170px; max-width: 700px; margin-left: auto; margin-right: auto; font-family: 'NanumSquare', sans-serif;} /*nav바랑 안겹치게 마진 설정*/
+.Content_con .title {padding-left: 12px; border-left: solid 13px #04756F;}
+.direction .img {}
+.title h2 {margin-top: 0; margin-bottom: 5px; font-size: 36px;}
+
